@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public int speed = 4;
+    public float rotateAmount = 8.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +19,11 @@ public class EnemyMovement : MonoBehaviour
         Vector3 rot = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + 180, transform.rotation.eulerAngles.z);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
-        if (transform.position.x <= -8.0f)
+        if (transform.position.x <= rotateAmount * -1)
         {
             transform.rotation = Quaternion.Euler(rot);
         }
-        if (transform.position.x >= 8.0f)
+        if (transform.position.x >= rotateAmount)
         {
             transform.rotation = Quaternion.Euler(rot);
         }
@@ -33,7 +34,6 @@ public class EnemyMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Bullet"))
         {
             Destroy(this.gameObject);
-            // this.gameObject.SetActive(false);
         }
     }
 }

@@ -35,48 +35,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isGameOver)
+        if (!isGameOver && hpNum <= 0)
         {
-            /*
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.Translate(Vector3.back * speed * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
-            }
-            if (Input.GetButtonDown("Jump") && jumping == false)
-            {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                jumping = true;
-            }
-
-            // Reset rotation
-            if (Input.GetKey(KeyCode.X))
-            {
-                transform.rotation = Quaternion.identity;
-                transform.position = new Vector3(transform.position.x, OGpos.y, transform.position.z);
-            }
-
-            // Reset position
-            if (Input.GetKey(KeyCode.Z))
-            {
-                transform.position = OGpos;
-            } */
-
-            if (hpNum <= 0)
-            {
-                isGameOver = true;
-            }
+            isGameOver = true;
         }
     }
 

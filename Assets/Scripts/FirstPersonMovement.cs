@@ -47,8 +47,7 @@ public class FirstPersonMovement : MonoBehaviour
             velocity.y += gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
-        } else
-        {
+        } else {
             Debug.Log("GAME OVER");
         }
     }
